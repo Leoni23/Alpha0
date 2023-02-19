@@ -87,7 +87,7 @@ export const AppRouter = () => {
                             <Route path='login' element={<Login />} />
 
                             <Route path="/forgot_password" element={<Forgot_password />} />
-                            <Route path="reset_password/:email/:token" element={<ResetPassword />} />
+                            <Route path="/reset_password/:email/:token" element={<ResetPassword />} />
 
                         </Routes>
                     </PublicRoute>
