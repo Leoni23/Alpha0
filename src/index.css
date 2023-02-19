@@ -1,0 +1,440 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css");
+/*============ LogIn*/
+.login-container{
+	height: 100%;
+  overflow-y: scroll;
+}
+
+/*--Button de creado correcto*/
+.alert-container1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.alert1 {
+  background-color: rgb(215, 223, 209);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgb(92, 109, 78);
+  text-align: center;
+  width: 400px;
+}
+
+
+/*============ Fonts */
+.font-face {
+    font-family:  'Signika Negative';
+    font-weight: normal;
+    font-style: normal;
+    overflow-y: scroll;
+}
+/*============ home*/
+.carousel {
+  float: left;
+  width: 70%;
+}
+
+.yellow-div {
+  float: right;
+  width: 30%;
+}
+
+
+.card-container {
+  display: flex;
+  justify-content: center;
+}
+
+#card {
+  width: 300px;
+  height: 150px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px "#F0F1E9";
+  overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+  #card {
+    width: 90%;
+    height: auto;
+  }
+}
+
+
+
+/*============ Icons */
+
+#textoGarza{
+  text-align: justify;
+}
+
+#textoPoderes{
+  color: #a8702b;
+  font-size: 16px;
+}
+
+#metodoBio{
+  padding-left :30px;
+}
+
+#inicio {
+  margin-top: -9px;
+  background-color: #426b8a;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#inicio:hover {
+  background-color: #5c96c2;
+}
+
+ #tituloB{
+   margin-top: 70px;
+} 
+
+#tituloV{
+  margin-top: 15px;
+  margin-block-end: 50px;
+  text-align:center
+}
+
+
+.brand-style {
+  color: #ce8c3b ;
+  font-size: 25px;
+  text-shadow: 2px 2px #7a7a7a ;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.bg-custom-gradient {
+  background: linear-gradient(to right, #427296, #f7b25d);
+}
+
+
+#carouselExampleInterval{
+ width: 630px;
+ height: 500px;
+}
+#carouselExampleInterval1{
+  width: 630px;
+  height: 500px;
+  
+ }
+ 
+
+
+.mastheadss{
+margin-top: 100px;
+margin-block-end: 55px;
+  height:550px; 
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #426b8a;
+}
+
+
+
+.carousel-item img {
+  width: 100%;
+  height: 450px;
+  
+}
+
+.img-fluidds {
+  max-width: 700px;
+  object-fit:cover;
+  object-fit: contain;
+ 
+}
+
+#person-circle {
+    width: 300px;
+}
+
+.card{
+  margin-bottom:20px;
+}
+
+.center-div{
+  display: flex; 
+  justify-content: center;
+}
+
+.centered-card{
+  margin: 0 auto;
+}
+
+.table-container {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.custom-th th {
+  font-size: 1em;
+  border: 1px solid gray;
+  background-color: #f2f2f2;
+  text-align: center;
+  color: #333;
+  
+}
+
+
+#publicidad{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 3rem;
+  color: #CA8725;
+  text-shadow: 2px 2px #000000;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 700;
+  padding: 10px;
+}
+
+table {
+  background-color: #f2f2f2;
+}
+
+/* Aplicar un borde redondeado a las celdas de la tabla */
+td, th {
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+/* Aplicar un hover effect a las filas de la tabla */
+tr:hover {
+  background-color: #ddd; /* Cambiar el color de fondo al hacer hover */
+  cursor: pointer; /* Cambiar el cursor a mano */
+}
+
+.inputBuscar {
+  width: 30%;
+  margin-left: 30px;
+}
+
+.center-div1 {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  background-color: #d4d4d4;
+  }
+
+.card-hover:hover {
+  transform: scale(1.1);
+  background-color: #CA8725;
+  }
+/********************************************/
+
+input {
+    @apply outline-0;
+  }
+
+  .body {
+    height: 100%;
+    position: relative;
+    overflow: scroll;
+
+  }
+
+  .body:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2a5555;
+    opacity: 0.7;
+    z-index: 1;
+  }
+  
+  img.bg-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 0;
+  }
+  
+/*   @media (pointer: coarse) and (hover: none) {
+    .body {
+      background: url("../assets/img/bg-mobile-fallback.jpg") #2a5555 no-repeat center center scroll;
+      background-size: cover;
+    }
+  
+    .body img {
+      display: none;
+    }
+  } */
+
+  .masthead {
+    position: relative;
+    overflow: scroll;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(204, 193, 193, 0.85);
+  }
+  .masthead .masthead-content {
+    position: relative;
+    max-width: 40rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+  .masthead .masthead-content h1, .masthead .masthead-content .h1 {
+    font-size: 2.5rem;
+  }
+  .masthead .masthead-content p {
+    font-size: 1.2rem;
+  }
+  .masthead .masthead-content p strong {
+    font-weight: 700;
+  }
+  .masthead .masthead-content .input-group-newsletter input {
+    height: auto;
+    width: 100%;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  .masthead .masthead-content .input-group-newsletter button {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: calc(1rem + 2px);
+  }
+  
+  #imgInicio{
+    height: 150px; 
+    margin-left: auto;
+    margin-right: auto; 
+}
+#btnIniciar{
+  
+  color: aliceblue;
+  background-color: rgb(9, 35, 63);
+  transition: background-color .6s;
+  
+}
+#btnIniciar:hover{
+  
+  background-color: rgba(17, 62, 110, 0.993);
+  
+}
+
+#textIniciar{
+    color: rgb(9, 35, 63);
+    font-size: 18px;
+}
+#textIniciar1{
+  color: rgb(9, 35, 63);
+  font-weight: bold;
+}
+#textIniciar2{
+  color: rgb(17, 17, 17);
+  font-weight: bold;
+}
+/*********************/
+
+
+  @media (min-width: 992px) { 
+    
+    .masthead {
+      height: 100%;
+      width: 75vw;
+      min-height: 0;
+      padding-bottom: 0;
+    }
+    .masthead:before {
+      transform: skewX(-9deg);
+      transform-origin: top right;
+    }
+    .masthead .masthead-content {
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: 2rem;
+      padding-right: 12rem;
+    }
+    .masthead .masthead-content h1, .masthead .masthead-content .h1 {
+      font-size: 3.5rem;
+    }
+    .masthead .masthead-content p {
+      font-size: 1.3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+
+    .masthead {
+      width: 65vw;
+    }
+  }
+  .social-icons {
+    position: relative;
+    z-index: 2;
+  }
+  .social-icons .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 100rem;
+  }
+  
+  @media (min-width: 992px) {
+    .social-icons {
+      position: absolute;
+      height: 100%;
+      top: 0;
+      right: 2.5rem;
+      width: auto;
+    }
+  }
+
+  
+.espacio{
+  margin-right: 1000px;
+}
+.ancho{
+  width: 700px;
+}
+
+
+
+
+.maps{
+  padding: 30px;
+  width:100%;
+  height:450px;
+}
+
+.boardPoderes{
+  background-color:#e4bc373d;
+}
