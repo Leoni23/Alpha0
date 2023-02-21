@@ -29,31 +29,30 @@ export const EmoEditDepresion = () => {
         getDepresion();
     }, [])
 
-    console.log(depresion)
     return (
         <>
-
-
-            <div className="container-fluid">
-                <div className="page-header">
-                    <h1 className="text-titles">
-                        <br />
-                        <i className="bi bi-file-earmark-richtext-fill"></i> Edición de la emoción miedo  {" "}
-                    </h1>
+            <div style={{ margin: "12px" }}>
+                <div className="container-fluid">
+                    <div className="panel panel-info">
+                        <div className="panel-heading">
+                            <h1 id="publicidad">Módulo de Emociones</h1>
+                            <h3 className="panel-title text-light"
+                                style={{ background: "#f7b25d", margin: "5px" }}>
+                                <i className="bi bi-pencil-square"></i> &nbsp; EDITAR EMOCION DEPRESION
+                            </h3>
+                        </div>
+                    </div>
                 </div>
-                <p className="lead">
-                    En esta sección se puede modificar la emoción miedo
-                </p>
+                {/* COPIAR LOGICA */}
+                <legend style={{ fontSize: "20px", color: " #548cb6" }} >
+                    &nbsp; &nbsp; Para modificar una emoción de la Escuela de Biodanza, se requiere la siguiente información:</legend>
+                <hr className='mt-3' />
+                {
+                    Object.keys(depresion).length > 0 ?
+                        (<EDepresionForm depresion={depresion} />) :
+                        (<p className="">&nbsp; &nbsp;Esperando datos de la emoción depresion...</p>)
+                }
             </div>
-
-            {/* COPIAR LOGICA */}
-
-            <hr className='mt-3' />
-            {
-                Object.keys(depresion).length > 0 ?
-                    (<EDepresionForm depresion={depresion} />) :
-                    (<p className="">No hay datos del MUSICA</p>)
-            }
         </>
     );
 

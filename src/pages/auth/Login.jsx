@@ -38,7 +38,7 @@ export const Login = () => {
                 <div class="masthead">
                     <div class="masthead-content text-white">
                         <div class="container-fluid">
-                            <form autocomplete="on" onSubmit={onLogin} >
+                            <form class="needs-validation" autocomplete="on" onSubmit={onLogin} >
                                 <p className="text-center text-light ">
                                     <i>
                                         <img id="imgInicio" class="img-responsive rounded-circle" src={p1}></img>
@@ -47,10 +47,10 @@ export const Login = () => {
                                 <p id="textIniciar" >Alcanza la ligereza suficiente de cuerpo y espíritu para volar hacia el horizonte tentando al futuro con el corazón.</p>
                                 <p id="textIniciar1" className="text-center">Inicia sesión en tu cuenta</p>
                                 <div className="form-group label-floating">
-                                    <label for="inputEmail4" className="control-label" >Correo Electrónico</label>
+                                    <label for="validationCustom01" class="form-label">Correo Electónico</label>
                                     <input
-                                        className="form-control"
-                                        id='email'
+                                        class="form-control"
+                                        id="validationCustom01"
                                         name='email'
                                         type='email'
                                         value={email}
@@ -60,16 +60,14 @@ export const Login = () => {
                                         autoFocus
                                         onChange={(e) => {
                                             setEmail(e.target.value)
-                                            if (e.target.value.length > 0) {
-                                                setMensaje(validateEmail(e.target.value))
+                                        }}
 
-                                            } else {
-                                                setSms(null)
-                                            }
-                                            console.log(mensaje)
-                                        }} />
+                                    />
+                                    <div class="valid-feedback">
+                                        ¡Se ve bien!
+                                    </div>
                                 </div>
-                                <p>{mensaje ? mensaje.message : 'Email'} </p>
+                              <br />
                                 <div className="form-group label-floating" >
                                     <label className="control-label">Contraseña</label>
                                     <input
@@ -80,20 +78,14 @@ export const Login = () => {
                                         value={password}
                                         placeholder='Ingresa tu contraseña'
                                         required
-                                        onChange={(e) => {
-                                            setPassword(e.target.value)
-                                            if (e.target.value.length > 0) {
-                                                setPassword1(validatePassword(e.target.value))
-                                            } else {
-                                                setMensaje(null)
-                                            }
-                                        }} />
-                                    <p>{password1 ? password1.message : 'Password'} </p>
+                                        onChange={(e) => { setPassword(e.target.value) }}
+                                    />
+                                   <br />
                                     <div className="text-center">
                                         <a id="textIniciar2" onClick={() => { navigate("/landing/forgot_password") }} className="small" href="#">¿Ha olvidado su contraseña?</a>
                                     </div>
                                 </div>
-                               <br />
+                                <br />
                                 <div class="col-12">
                                     <button id="btnIniciar" class="btn btn-block ">Iniciar sesión</button>
                                 </div>

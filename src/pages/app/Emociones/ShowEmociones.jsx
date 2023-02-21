@@ -101,221 +101,142 @@ export const ShowEmociones = () => {
 
 
     return (
-
-        <div className="container-fluid">
-            <div className="panel panel-info">
-                <div className="panel-heading bg-warning">
-                    <h3 className="panel-title text-light">
-                        <i className="bi bi-file-earmark-person-fill"></i> &nbsp; DETALLES DE miedo
-                    </h3>
+        <div className="container-fluid py-2" style={{ background: " #E2E2E2" }}>
+            <h1 id="publicidad" >Módulo de Emociones </h1>
+            <div class="mx-auto my-5" style={{ maxWidth: "1100px" }}>
+                <div class="card-header bg-warning text-light text-center bg-custom-gradient ">
+                    <h4 class="card-title bg-custom-gradient">
+                        <i></i> Emoción Miedo
+                    </h4>
                 </div>
-                <div className="py-3 panel-body">
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-file-earmark-richtext-fill"></i> &nbsp; Información del evento creado</legend>
-                            <p className="">
-                                <span className="">
-                                    Titulo:{" "}
-                                </span>
-                                {miedo.Tema}
-                            </p>
-                            <p className="">
-                                <span className="">
-                                    Descripcion:{" "}
-                                </span>
-                                {miedo.descripcion}
-                            </p>
+                <div class="card-body py-3" style={{ background: " #f6f8fc" }}  >
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6">
+                            <legend><i class="bi bi-file-earmark-richtext-fill"></i> Información del evento creado</legend>
+                            <p><b>Título:</b> {miedo.Tema}</p>
+                            <p><b>Descripción:</b> {miedo.descripcion}</p>
+                            <button class="btn btn-sm text-light mx-1 bi bi-pencil-square"
+                                style={{ background: "#f7b25d" }} onClick={() => navigate(`/EmoEditMiedo/${1}`)}>Modificar</button>
+                            <button class="btn btn-sm text-light mx-1 bi bi-sort-up-alt"
+                                style={{ background: "#505A6A" }} onClick={() => navigate(`/Miedo`)}>Mostrar lista miedo</button>
                         </div>
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-image"></i> &nbsp; Imágen </legend>
-                            <video src={miedo.video} controls style={{ width: '45%' }} className=" col-xs-12 h-30 w-30">
+                        <div className="col-sm-6">
+                            <legend><i className="bi bi-image"></i> Imágen</legend>
+                            <video src={miedo.video} controls style={{ width: "70%" }} className="my-3">
                                 Tu navegador no soporta la reproducción de video.
                             </video>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/EmoEditMiedo/${1}`)}>Modificar</butoon>
-                    
-                </div>
-
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/Miedo`)}>mostrar lista miedo</butoon>
-                    
-                </div>
             </div>
 
-            <div className="panel panel-info">
-                <div className="panel-heading bg-warning">
-                    <h3 className="panel-title text-light">
-                        <i className="bi bi-file-earmark-person-fill"></i> &nbsp; DETALLES DE LA EMOCION DEPRESION 
-                    </h3>
+            <div class="mx-auto my-5" style={{ maxWidth: "1100px" }}>
+                <div class="card-header bg-warning text-light text-center bg-custom-gradient ">
+                    <h4 class="card-title bg-custom-gradient">
+                        <i></i> Emoción Depresión
+                    </h4>
                 </div>
-                <div className="py-3 panel-body">
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-file-earmark-richtext-fill"></i> &nbsp; Información del evento creado</legend>
-                            <p className="">
-                                <span className="">
-                                    Titulo:{" "}
-                                </span>
-                                {depre.Tema}
-                            </p>
-                            <p className="">
-                                <span className="">
-                                    Descripcion:{" "}
-                                </span>
-                                {depre.descripcion}
-                            </p>
+                <div class="card-body py-3" style={{ background: " #f6f8fc" }}  >
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6">
+                            <legend><i class="bi bi-file-earmark-richtext-fill"></i> Información del evento creado</legend>
+                            <p><b>Título:</b> {depre.Tema}</p>
+                            <p><b>Descripción:</b> {depre.descripcion}</p>
+                            <button class="btn btn-sm text-light mx-1 bi bi-pencil-square"
+                                style={{ background: "#f7b25d" }} onClick={() => navigate(`/EmoEditDepresion/${1}`)}>Modificar</button>
+                            <button class="btn btn-sm text-light mx-1 bi bi-sort-up-alt"
+                                style={{ background: "#505A6A" }} onClick={() => navigate(`/Depresion`)}>Mostrar lista depresión</button>
                         </div>
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-image"></i> &nbsp; Video </legend>
-                            <video src={depre.video} controls style={{ width: '45%' }} className=" col-xs-12 h-30 w-30">
+                        <div className="col-sm-6">
+                            <legend><i className="bi bi-image"></i> Imágen</legend>
+                            <video src={depre.video} controls style={{ width: "70%" }} className="my-3">
                                 Tu navegador no soporta la reproducción de video.
                             </video>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/EmoEditDepresion/${1}`)}>Modificar</butoon>
-                    
-                </div>
-
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/Depresion`)}>listar multimedia de depresión </butoon>
-                    
-                </div>
             </div>
 
-            <div className="panel panel-info">
-                <div className="panel-heading bg-warning">
-                    <h3 className="panel-title text-light">
-                        <i className="bi bi-file-earmark-person-fill"></i> &nbsp; DETALLES DE EMOCION IRA
-                    </h3>
+            <div class="mx-auto my-5" style={{ maxWidth: "1100px" }}>
+                <div class="card-header bg-warning text-light text-center bg-custom-gradient ">
+                    <h4 class="card-title bg-custom-gradient">
+                        <i></i> Emoción Ira
+                    </h4>
                 </div>
-                <div className="py-3 panel-body">
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-file-earmark-richtext-fill"></i> &nbsp; Información del evento creado</legend>
-                            <p className="">
-                                <span className="">
-                                    Titulo:{" "}
-                                </span>
-                                {ira.Tema}
-                            </p>
-                            <p className="">
-                                <span className="">
-                                    Descripcion:{" "}
-                                </span>
-                                {ira.descripcion}
-                            </p>
+                <div class="card-body py-3" style={{ background: " #f6f8fc" }}  >
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6">
+                            <legend><i class="bi bi-file-earmark-richtext-fill"></i> Información del evento creado</legend>
+                            <p><b>Título:</b> {ira.Tema}</p>
+                            <p><b>Descripción:</b> {ira.descripcion}</p>
+                            <button class="btn btn-sm text-light mx-1 bi bi-pencil-square"
+                                style={{ background: "#f7b25d" }} onClick={() => navigate(`/EmoEditIra/${1}`)}>Modificar</button>
+                            <button class="btn btn-sm text-light mx-1 bi bi-sort-up-alt"
+                                style={{ background: "#505A6A" }} onClick={() => navigate(`/Ira`)}>Mostrar lista depresión</button>
                         </div>
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-image"></i> &nbsp; Imágen </legend>
-                            <video src={ira.video} controls style={{ width: '45%' }} className=" col-xs-12 h-30 w-30">
-                                Tu navegador no soporta la reproducción de video.
-                            </video>
-                        </div>
-
-                        
-                    </div>
-                    
-                </div>
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/EmoEditIra/${1}`)}>Modificar</butoon>
-                    
-                </div>
-
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/Ira`)}>mostrar lista Ira</butoon>
-                    
-                </div>
-            </div>
-
-            <div className="panel panel-info">
-                <div className="panel-heading bg-warning">
-                    <h3 className="panel-title text-light">
-                        <i className="bi bi-file-earmark-person-fill"></i> &nbsp; DETALLES DE EMOCION ANSIEDAD
-                    </h3>
-                </div>
-                <div className="py-3 panel-body">
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-file-earmark-richtext-fill"></i> &nbsp; Información del evento creado</legend>
-                            <p className="">
-                                <span className="">
-                                    Titulo:{" "}
-                                </span>
-                                {ansi.Tema}
-                            </p>
-                            <p className="">
-                                <span className="">
-                                    Descripcion:{" "}
-                                </span>
-                                {ansi.descripcion}
-                            </p>
-                        </div>
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-image"></i> &nbsp; Imágen </legend>
-                            <video src={ansi.video} controls style={{ width: '45%' }} className=" col-xs-12 h-30 w-30">
+                        <div className="col-sm-6">
+                            <legend><i className="bi bi-image"></i> Imágen</legend>
+                            <video src={ira.video} controls style={{ width: "70%" }} className="my-3">
                                 Tu navegador no soporta la reproducción de video.
                             </video>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/EmoEditAnsiedad/${1}`)}>Modificar</butoon>
-                    
-                </div>
-
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/Ansiedad`)}>mostrar lista Ansiedad</butoon>
-                    
-                </div>
             </div>
 
-            <div className="panel panel-info">
-                <div className="panel-heading bg-warning">
-                    <h3 className="panel-title text-light">
-                        <i className="bi bi-file-earmark-person-fill"></i> &nbsp; DETALLES DE EMOCION SOLEDAD
-                    </h3>
+            <div class="mx-auto my-5" style={{ maxWidth: "1100px" }}>
+                <div class="card-header bg-warning text-light text-center bg-custom-gradient ">
+                    <h4 class="card-title bg-custom-gradient">
+                        <i></i> Emoción Ansiedad
+                    </h4>
                 </div>
-                <div className="py-3 panel-body">
-                    <div className="row">
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-file-earmark-richtext-fill"></i> &nbsp; Información del evento creado</legend>
-                            <p className="">
-                                <span className="">
-                                    Titulo:{" "}
-                                </span>
-                                {soledad.Tema}
-                            </p>
-                            <p className="">
-                                <span className="">
-                                    Descripcion:{" "}
-                                </span>
-                                {soledad.descripcion}
-                            </p>
+                <div class="card-body py-3" style={{ background: " #f6f8fc" }}  >
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6">
+                            <legend><i class="bi bi-file-earmark-richtext-fill"></i> Información del evento creado</legend>
+                            <p><b>Título:</b> {ansi.Tema}</p>
+                            <p><b>Descripción:</b> {ansi.descripcion}</p>
+                            <button class="btn btn-sm text-light mx-1 bi bi-pencil-square"
+                                style={{ background: "#f7b25d" }} onClick={() => navigate(`/EmoEditAnsiedad/${1}`)}>Modificar</button>
+                            <button class="btn btn-sm text-light mx-1 bi bi-sort-up-alt"
+                                style={{ background: "#505A6A" }} onClick={() => navigate(`/Ansiedad`)}>Mostrar lista depresión</button>
                         </div>
-                        <div className="col-xs-12 col-sm-6">
-                            <legend><i className="bi bi-image"></i> &nbsp; Imágen </legend>
-                            <video src={soledad.video} controls style={{ width: '45%' }} className=" col-xs-12 h-30 w-30">
+                        <div className="col-sm-6">
+                            <legend><i className="bi bi-image"></i> Imágen</legend>
+                            <video src={ansi.video} controls style={{ width: "70%" }} className="my-3">
                                 Tu navegador no soporta la reproducción de video.
                             </video>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/EmoEditSoledad/${1}`)}>Modificar</butoon>
-                    
-                </div>
-
-                <div class="card-footer">
-                    <butoon class="btn btn-primary btn-sm text-light" onClick={() => navigate(`/Soledad`)}>mostrar lista Soledad</butoon>
-                    
-                </div>
             </div>
 
+            <div class="mx-auto my-5" style={{ maxWidth: "1100px" }}>
+                <div class="card-header bg-warning text-light text-center bg-custom-gradient ">
+                    <h4 class="card-title bg-custom-gradient">
+                        <i></i> Emoción Soledad
+                    </h4>
+                </div>
+                <div class="card-body py-3" style={{ background: " #f6f8fc" }}  >
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6">
+                            <legend><i class="bi bi-file-earmark-richtext-fill"></i> Información del evento creado</legend>
+                            <p><b>Título:</b> {soledad.Tema}</p>
+                            <p><b>Descripción:</b> {soledad.descripcion}</p>
+                            <button class="btn btn-sm text-light mx-1 bi bi-pencil-square"
+                                style={{ background: "#f7b25d" }} onClick={() => navigate(`/EmoEditSoledad/${1}`)}>Modificar</button>
+                            <button class="btn btn-sm text-light mx-1 bi bi-sort-up-alt"
+                                style={{ background: "#505A6A" }} onClick={() => navigate(`/Soledad`)}>Mostrar lista depresión</button>
+                        </div>
+                        <div className="col-sm-6">
+                            <legend><i className="bi bi-image"></i> Imágen</legend>
+                            <video src={soledad.video} controls style={{ width: "70%" }} className="my-3">
+                                Tu navegador no soporta la reproducción de video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
