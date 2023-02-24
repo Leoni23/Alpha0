@@ -51,7 +51,7 @@ export const EMiedoForm = ({ miedo }) => {
             console.log(miedo)
             if (miedo?.id) {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/miedo/${1}/update`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/miedo/${1}/update`,
                     data,
                     { headers: { 'authorization': token } }
                 );
@@ -70,7 +70,7 @@ export const EMiedoForm = ({ miedo }) => {
             <div className="panel-body">
                 <form onSubmit={handleSubmit}>
                     {
-                        error && <p className='text-red-700 font-semibold text-xl'>Todssos los campos son obligatorios</p>
+                        error && <p className='text-red-700 font-semibold text-xl'>Todos los campos son obligatorios</p>
                     }
                    <fieldset>
                     <div className="container-fluid was-validated">

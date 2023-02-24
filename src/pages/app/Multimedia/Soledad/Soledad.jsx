@@ -15,7 +15,7 @@ export const Soledad = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaofinal.herokuapp.com/api/alpha/musicTwo/lista',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/musicTwo/lista',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data)
@@ -34,7 +34,7 @@ export const Soledad = () => {
             const confirmation = confirm("Estas seguro que desea eliminar esta imagen")
             if (confirmation) {
                 await axios.get(
-                    `https://alphaofinal.herokuapp.com/api/alpha/musicTwo/${id}/destroy`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicTwo/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 await getSoledad();

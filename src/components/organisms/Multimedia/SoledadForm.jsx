@@ -41,7 +41,7 @@ export const SoledadForm = ({ soledad }) => {
             console.log(soledad)
             if (soledad?.id) {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/musicTwo/${soledad.id}/update`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicTwo/${soledad.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
 
@@ -50,7 +50,7 @@ export const SoledadForm = ({ soledad }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/musicTwo/create`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicTwo/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );
@@ -142,7 +142,7 @@ export const SoledadForm = ({ soledad }) => {
                                 </div>
                                 <div className="col-xs-12 col-sm-6">
                                     <div className="form-group label-floating">
-                                        <label htmlFor='duracion' className="control-label form-label">Duración de reprodución (minutos)</label>
+                                        <label htmlFor='duracion' className="control-label form-label">Duración de reprodución (segundos)</label>
                                         <input
                                             className="form-control"
                                             id='duracion'
@@ -152,8 +152,8 @@ export const SoledadForm = ({ soledad }) => {
                                             placeholder='Ingresa la duración del audio'
                                             onChange={(e) => setDuracion(e.target.value)}
                                             required
-                                            min="1"
-                                            max="59"
+                                            min="10"
+                                            max="3600"
                                         />
 
                                     </div>

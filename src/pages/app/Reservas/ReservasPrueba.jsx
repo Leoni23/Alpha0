@@ -17,7 +17,7 @@ export const ReservasPrueba = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaofinal.herokuapp.com/api/alpha/events/eventlist',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/events/eventlist',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.eventos)
@@ -35,7 +35,7 @@ export const ReservasPrueba = () => {
             
             if (confirmation) {
                 await axios.get(
-                    `https://alphaofinal.herokuapp.com/api/alpha/events/eventodestroy/${id}/destroy`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/events/eventodestroy/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 await getReserva();

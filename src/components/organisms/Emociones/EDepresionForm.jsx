@@ -51,7 +51,7 @@ export const EDepresionForm = ({ depresion }) => {
             console.log(depresion)
             if (depresion?.id) {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/depresion/${1}/update`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/depresion/${1}/update`,
                     data,
                     { headers: { 'authorization': token } }
                 );

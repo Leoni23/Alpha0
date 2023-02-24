@@ -2,32 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { Link } from "react-router-dom";
-
-
-/* import React from 'react';
-import { BannerForm } from '../../../components/organisms/BannerForm';
-import { useNavigate } from "react-router-dom";
-
-export const CreateBanner = () => {
-    return (
-        <div>
-            <div className="container-fluid">
-                <div className="panel panel-info">
-                    <div className="panel-heading bg-info">
-                        <h3 className="panel-title text-light"><i className="zmdi zmdi-plus"></i> &nbsp; NUEVA MUSICA</h3>
-                    </div>
-                    <BannerForm />
-                </div>
-            </div>
-
-
-        </div>
-    );
-}   */
-
-
-
 
 export const IraForm = ({ ira }) => {
 
@@ -42,13 +16,9 @@ export const IraForm = ({ ira }) => {
     const [genero, setGenero] = useState(ira?.genero || "");
     const [duracion, setDuracion] = useState(ira?.duracion || "");
     const [audio, setAudio] = useState(null);
-
     const [showAlert, setShowAlert] = useState(false);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-
         setShowAlert(true);
 
 
@@ -68,7 +38,7 @@ export const IraForm = ({ ira }) => {
             console.log(ira)
             if (ira?.id) {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/musicOne/${ira.id}/update`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicOne/${ira.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
                 );
@@ -76,16 +46,13 @@ export const IraForm = ({ ira }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/musicOne/create`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicOne/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );
                 console.log(response.data);
                 setMensaje(response.data.messages)
             }
-
-            /* navigate('/'); */
-
         } catch (error) {
             console.log(error);
         }
@@ -114,6 +81,7 @@ export const IraForm = ({ ira }) => {
                                             value={tema}
                                             onChange={(e) => setTema(e.target.value)}
                                             minLength="3"
+                                            maxLength="30"
                                             required />
                                     </div>
                                 </div>
@@ -165,13 +133,14 @@ export const IraForm = ({ ira }) => {
                                             placeholder='Ingresa un género de música'
                                             onChange={(e) => setGenero(e.target.value)}
                                             minLength="3"
+                                            maxLength="30"
                                             required
                                         />
                                     </div>
                                 </div>
                                 <div className="col-xs-12 col-sm-6">
                                     <div className="form-group label-floating">
-                                        <label htmlFor='duracion' className="control-label form-label">Duración de reprodución (minutos)</label>
+                                        <label htmlFor='duracion' className="control-label form-label">Duración de reprodución (segundos)</label>
                                         <input
                                             className="form-control"
                                             id='duracion'
@@ -181,8 +150,8 @@ export const IraForm = ({ ira }) => {
                                             placeholder='Ingresa la duración del audio'
                                             onChange={(e) => setDuracion(e.target.value)}
                                             required
-                                            min="1"
-                                            max="59"
+                                            min="10"
+                                            max="3600"
                                         />
 
                                     </div>

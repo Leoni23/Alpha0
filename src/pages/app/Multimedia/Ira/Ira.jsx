@@ -18,7 +18,7 @@ export const Ira = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaofinal.herokuapp.com/api/alpha/musicOne/lista',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/musicOne/lista',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data)
@@ -37,7 +37,7 @@ export const Ira = () => {
             const confirmation = confirm("Estas seguro que desea eliminar esta imagen")
             if (confirmation) {
                 await axios.get(
-                    `https://alphaofinal.herokuapp.com/api/alpha/musicOne/${id}/destroy`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicOne/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 await getIra();

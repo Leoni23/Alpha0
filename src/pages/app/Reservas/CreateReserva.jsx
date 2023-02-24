@@ -8,14 +8,15 @@ export const CreateReserva = () => {
             <div className="container-fluid">
                 <div className="panel panel-info">
                     <div className="panel-heading">
-                        <h3 className="panel-title text-light"  
-                        style={{ background: "#427296", margin: "5px" }}>
-                            <i className="zmdi zmdi-plus"></i> &nbsp; CREAR NUEVO EVENTO</h3>
-                            <legend style={{ fontSize: "20px", color: " #548cb6" }} >
-                            &nbsp;  Para crear un evento de la Escuela de Biodanza, se requiere la siguiente información:</legend>
-                            <hr className='mt-3' />
+                        <h1 id="publicidad">Eventos</h1>
+                        <h3 className="panel-title text-light"
+                            style={{ background: "#427296", margin: "5px" }}>
+                            <i className="zmdi zmdi-plus"></i>&nbsp;CREAR EVENTO</h3>
+                        <legend style={{ fontSize: "20px", color: " #548cb6" }} >
+                            &nbsp;  Para crear una nueva lista de reproducción en la emoción ira,
+                            es necesario y se requiere proporcionar la siguiente información:</legend>
+                        <hr className='mt-3' />
                     </div>
-                    
                     <ReservaForm />
                 </div>
             </div>

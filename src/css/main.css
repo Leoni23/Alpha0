@@ -184,8 +184,8 @@ body, html{
 .dashboard-sideBar-UserInfo ul > li > a:hover{
 	color: #4197dd;
 }
-.dashboard-sideBar-Menu{
-	padding-top: 15px;
+/* .dashboard-sideBar-Menu{
+	padding-top: 5px;
 }
 .dashboard-sideBar-Menu > li,
 .dashboard-sideBar-Menu > li > a,
@@ -200,6 +200,8 @@ body, html{
 	transition: all .3s ease-in-out;
 	position: relative;
 }
+
+
 .dashboard-sideBar-Menu > li > a > i.zmdi-caret-down{
 	line-height: 50px;
 	transition: all .3s ease-in-out; 
@@ -239,7 +241,10 @@ body, html{
 .dashboard-sideBar-Menu > li > ul > li > a:hover{
 	border-left: 3px solid #4197dd;
 	color: #4197dd;
-}
+} */
+
+
+
 /*contentPage*/
 .dashboard-contentPage{
 	right: 0;

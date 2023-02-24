@@ -27,7 +27,44 @@
   width: 400px;
 }
 
+.dropdown-menuu li a:hover,
+.dropdown-menuu li a.active {
+  background-color: rgba(255, 255, 255, .2);  
+}
 
+.dropdown-menuu li a {
+  padding: 7px;
+  line-height: 40px;
+  font-family:  'Signika Negative';
+	display: block;
+	color: #ffffff;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: all .3s ease-in-out;
+	position: relative;
+  margin: 0 13px 0;
+  font-size: 17px;
+  
+
+}
+
+.dropdown-menuu li a i {
+  text-decoration: none;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 10px;
+}
+
+.banner-img {
+  max-width: 20%;
+  height: auto;
+}
+.table-responsive {
+  max-width: 1200px; /* Ajusta el valor según lo que necesites */
+  margin: 0 auto; /* Centra la tabla en el contenedor */
+}
 /*============ Fonts */
 .font-face {
     font-family:  'Signika Negative';

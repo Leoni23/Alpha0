@@ -19,7 +19,7 @@ export const Dashboard = () => {
         try {
             logout();
             await axios.post(
-                'https://alphaofinal.herokuapp.com/api/alpha/logout',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/logout',
                 {}, { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             navigate('/login', { replace: true });
@@ -31,7 +31,7 @@ export const Dashboard = () => {
     const getPerfil = async () => {
         try {
             const response = await axios.get(
-                'https://alphaofinal.herokuapp.com/api/alpha/profile',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/profile',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data)
@@ -51,22 +51,19 @@ export const Dashboard = () => {
             <section className="full-box dashboard-sideBar" >
                 <div className="full-box dashboard-sideBar-bg btn-menu-dashboard"></div>
                 <div className="full-box dashboard-sideBar-ct">
-
                     <div className="full-box text-uppercase text-center text-titles dashboard-sideBar-title">
                         Alpha0 <i className="zmdi zmdi-close btn-menu-dashboard visible-xs"></i>
                     </div>
                     <div>
-
                         <div key={perfil} className="full-box dashboard-sideBar-UserInfo">
-
                             <figure className="full-box">
                                 <img src={avatar} alt="UserIcon" />
                                 {<figcaption className="text-center text-titles">
+                                    <p>{perfil.first_name} {perfil.last_name}</p>
                                     <p>{perfil.username}</p>
                                     <p>{perfil.email}</p>
                                 </figcaption>}
                             </figure>
-
                             <ul className="full-box list-unstyled text-center">
                                 <li>
                                     <Link to="/profile" title="Editar perfil">
@@ -74,50 +71,18 @@ export const Dashboard = () => {
                                     </Link>
                                 </li>
                                 <li>
-
                                     <a onClick={onLogout} className="">
                                         <i className="zmdi zmdi-power"></i>
                                     </a>
                                 </li>
                             </ul>
                         </div>
-
                     </div>
 
-                    <ul className="list-unstyled full-box dashboard-sideBar-Menu">
+                    <ul className="list-unstyled dropdown-menuu">
                         <li>
                             <Link to='/'>
-                                <i className="zmdi zmdi-home"></i> Inicio
-                            </Link>
-                        </li>
-                        <li id="MultiIra">
-                            <Link to='/Ira'>
-                                <i className="zmdi zmdi-view-dashboard zmdi-playlist-audio"></i> Ira
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/Ansiedad'>
-                                <i className="zmdi zmdi-view-dashboard zmdi-playlist-audio"></i> Ansiedad
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/Soledad'>
-                                <i className="zmdi zmdi-view-dashboard zmdi-playlist-audio"></i> Soledad
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/Miedo'>
-                                <i className="zmdi zmdi-view-dashboard zmdi-playlist-audio"></i> Miedo
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/Depresion'>
-                                <i className="zmdi zmdi-view-dashboard zmdi-playlist-audio"></i> Depresion
-                            </Link>
-                        </li>
-                        <li id="emociones1" >
-                            <Link to='/ShowEmociones'>
-                                <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Emociones
+                                <i className="zmdi zmdi-home active"></i> Inicio
                             </Link>
                         </li>
                         <li id="reserva">
@@ -125,12 +90,39 @@ export const Dashboard = () => {
                                 <i className="zmdi zmdi-check-circle-u"></i> Eventos
                             </Link>
                         </li>
+                        <li id="emociones1" >
+                            <Link to='/ShowEmociones' className="dropdown-toggle">
+                                <i className="zmdi zmdi-view-dashboard zmdi-hc-fw"> </i> Emociones
+                            </Link>
+                            <ul className="submenu">
+                                <li id="MultiIra">
+                                    <Link to='/Ira'><i className=""></i> Música  Ira </Link>
+                                </li>
+                                <li>
+                                    <Link to='/Ansiedad'>
+                                        <i className=""></i> Música  Ansiedad </Link>
+                                </li>
+                                <li>
+                                    <Link to='/Soledad'>
+                                        <i className=""></i> Música  Soledad </Link>
+                                </li>
+                                <li>
+                                    <Link to='/Miedo'>
+                                        <i className=""></i> Música  Miedo </Link>
+                                </li>
+                                <li>
+                                    <Link to='/Depresion'>
+                                        <i className=""></i> Música  Depresión   </Link>
+                                </li>
+                            </ul>
+                        </li>
+
+
                         <li id="publicidad1">
                             <Link to='/publicidad'>
                                 <i className="zmdi zmdi-account-add"></i> Publicidad
                             </Link>
                         </li>
-                        <li></li>
                         <li>
                             <Link to='/user'>
                                 <i className="zmdi zmdi-account-add"></i> Usuarios
@@ -142,6 +134,7 @@ export const Dashboard = () => {
                             </Link>
                         </li>
                     </ul>
+
                 </div>
             </section>
 

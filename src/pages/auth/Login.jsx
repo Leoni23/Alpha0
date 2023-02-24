@@ -13,24 +13,28 @@ export const Login = () => {
     const [password1, setPassword1] = useState(null)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [passwordError, setPasswordError] = useState('');
+
     const onLogin = async (e) => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'https://alphaofinal.herokuapp.com/api/alpha/login',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/login',
                 { email, password },
                 { headers: { 'accept': 'application/json' } }
-            )
-            const { access_token, token_type, user } = response.data.data
+            );
+            const { access_token, token_type, user } = response.data.data;
             console.warn(access_token, token_type, user);
             login(user, `${token_type} ${access_token}`);
             navigate('/');
         } catch (error) {
-            console.log(error.response.data.message, 'error');
+            console.log(error.response.data && error.response.data.message, 'error');
             setEmail('');
             setPassword('');
+            setPasswordError('Credenciales inválidas. Inténtalo nuevamente.');
         }
     }
+
     return (
         <>
             <div class="body">
@@ -67,7 +71,7 @@ export const Login = () => {
                                         ¡Se ve bien!
                                     </div>
                                 </div>
-                              <br />
+                                <br />
                                 <div className="form-group label-floating" >
                                     <label className="control-label">Contraseña</label>
                                     <input
@@ -78,17 +82,26 @@ export const Login = () => {
                                         value={password}
                                         placeholder='Ingresa tu contraseña'
                                         required
-                                        onChange={(e) => { setPassword(e.target.value) }}
+                                        onChange={(e) => {
+                                            setPassword(e.target.value);
+                                            setPasswordError('');
+                                        }}
                                     />
-                                   <br />
+                                    {passwordError && <div style={{ color: 'red' }}>{passwordError}</div>}
+
+                                    <br />
                                     <div className="text-center">
                                         <a id="textIniciar2" onClick={() => { navigate("/landing/forgot_password") }} className="small" href="#">¿Ha olvidado su contraseña?</a>
+                                    </div>
+                                    <div className="text-center ">
+                                        <a onClick={() => { navigate("/landing") }} id="textIniciar1" >Regresar</a>
                                     </div>
                                 </div>
                                 <br />
                                 <div class="col-12">
                                     <button id="btnIniciar" class="btn btn-block ">Iniciar sesión</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>

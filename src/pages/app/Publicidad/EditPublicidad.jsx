@@ -8,13 +8,14 @@ import { PublicidadForm } from '../../../components/organisms/PublicidadForm';
 export const EditPublicidad = () =>{
     const { id } = useParams();
     const [publi, setPublicidad] = useState({});
+  
     const token = localStorage.getItem('token');
 
     useEffect(() => {
         const getPublicidad = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaofinal.herokuapp.com/api/alpha/publicidad/${id}`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/${id}`,
                     { headers: { 'authorization': token } }
                     );
                 const publ = {...response.data.data.publ, id }
@@ -31,42 +32,30 @@ export const EditPublicidad = () =>{
 
     console.log(publi)
     return (
-		<>
-            
-
-			<div className="container-fluid">
-				<div className="page-header">
-					<h1 className="text-titles">
-                    <i className="bi bi-file-earmark-richtext-fill"></i> Edicion{" "}
-						<small>DE MULTIMEDIA</small>
-					</h1>
-				</div>
-				<p className="lead">
-					aqui se va poder modificar la info de musica
-				</p>
-			</div>
-            <div className="container-fluid">
-                <div className="panel panel-info">
-                    <div className="panel-heading bg-info">
-                        <h3 className="panel-title text-light"><i className="bi bi-pencil-square"></i> &nbsp; EDITAR MUSICA</h3>
+        <>
+            <div style={{ margin: "12px" }}>
+                <div className="container-fluid">
+                    <div className="panel panel-info">
+                        <div className="panel-heading">
+                            <h1 id="publicidad">Publicidad</h1>
+                            <h3 className="panel-title text-light"
+                                style={{ background: "#f7b25d", margin: "5px" }}>
+                                <i className="bi bi-pencil-square"></i> &nbsp; EDITAR PUBLICIDAD
+                            </h3>
+                        </div>
                     </div>
-                   
                 </div>
+                {/* COPIAR LOGICA */}
+                <legend style={{ fontSize: "20px", color: " #548cb6" }} >
+                    &nbsp; &nbsp; Para modificar una publicidad de la Escuela de Biodanza, se requiere la siguiente información:</legend>
+                <hr className='mt-3' />
+                {
+                    Object.keys(publi).length > 0 ?
+                        (<PublicidadForm publi={publi} />) :
+                        (<p className="">&nbsp; &nbsp;Esperando datos de la música...</p>)
+                }
             </div>
-            {/* COPIAR LOGICA */}
-            <h1 className='font-black text-4xl text-sky-900'>Reporte</h1>
-            <hr className='mt-3' />
-            {
-                Object.keys(publi).length > 0 ?
-                    (
-                        <PublicidadForm publi={publi} />
-                    )
-                    :
-                    (
-                        <p className="">No hay datos del MUSICA</p>
-                    )
-            }
-		</>
-	);
+        </>
+    );
 
 }

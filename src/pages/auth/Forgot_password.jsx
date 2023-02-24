@@ -14,11 +14,12 @@ export const Forgot_password = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'https://alphaofinal.herokuapp.com/api/alpha/forgot-password',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/forgot-password',
                 { email },
                 { headers: { 'accept': 'application/json' } }
             )
             console.log(response.data.data);
+            const confirmation = window.confirm('Se ha enviado un correo electrónico a ' + email + '. Revisa tu bandeja de entrada y sigue las instrucciones para restablecer tu contraseña.');
 
             /*  navigate('/login/ResetPassword'); */
         } catch (error) {
@@ -40,7 +41,7 @@ export const Forgot_password = () => {
                                         <img id="imgInicio" class="img-responsive rounded-circle" src={p1}></img>
                                     </i>
                                 </p>
-                                <p id="textIniciar" >Alcanza la ligereza suficiente de cuerpo y espíritu para volar hacia el horizonte tentando al futuro con el corazón.</p>
+                                <p id="textIniciar" >Aalcanza la ligereza suficiente de cuerpo y espíritu para volar hacia el horizonte tentando al futuro con el corazón.</p>
                                 <p id="textIniciar1" className="text-center">Proporciona tu email para recuperar tu cuenta</p>
                                 <div className="form-group label-floating">
                                     <label className="control-label" >Correo electrónico</label>
@@ -60,27 +61,28 @@ export const Forgot_password = () => {
                                 <div className="form-group text-center">
                                 </div>
 
-                                <div className='pt-4 flex justify-center'>
+                                {/*  <div className='pt-4 flex justify-center'>
                                     <Button name='Enviar correo' styles='w-3/5' />
+                                </div> */}
+                                <br />
+                                <div class="col-12">
+                                    <button id="btnIniciar" class="btn btn-block ">Enviar Solicitud</button>
                                 </div>
 
-
-
                                 {/* <Button name='Sing in' styles='w-3/5' /> */}
-                                <br /><div className="text-center ">
+                                <br />
+                                <div className="text-center ">
                                     <a onClick={() => { navigate("/landing/login") }} id="textIniciar1" >Regresar</a>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="social-icons">
+                {/* <div class="social-icons">
                     <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-                        <a class="btn btn-dark m-3" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark m-3" href="https://www.facebook.com/biodanzapuembo.quito"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark m-3" href="#!"><i class="fab fa-instagram"></i></a>
                     </div>
-                </div>
+                </div> */}
                 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
             </div>
         </>

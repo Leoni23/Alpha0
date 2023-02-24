@@ -14,7 +14,7 @@ export const EditContact = () =>{
         const getContact = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaofinal.herokuapp.com/api/alpha/contactos/${id}`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/contactos/${id}`,
                     { headers: { 'authorization': token } }
                     );
                 const contactanos = {...response.data.data.contactanos, id}
@@ -31,42 +31,30 @@ export const EditContact = () =>{
 
     console.log(contact)
     return (
-		<>
-            
-
-			<div className="container-fluid">
-				<div className="page-header">
-					<h1 className="text-titles">
-                    <i className="bi bi-file-earmark-richtext-fill"></i> Edicion{" "}
-						<small>DE MULTIMEddDIA IRA</small>
-					</h1>
-				</div>
-				<p className="lead">
-					aqui se va poder modificar la info de musica
-				</p>
-			</div>
-            <div className="container-fluid">
-                <div className="panel panel-info">
-                    <div className="panel-heading bg-info">
-                        <h3 className="panel-title text-light"><i className="bi bi-pencil-square"></i> &nbsp; EDITAR MUSICA</h3>
+        <>
+            <div style={{ margin: "12px" }}>
+                <div className="container-fluid">
+                    <div className="panel panel-info">
+                        <div className="panel-heading">
+                            <h1 id="publicidad">Contactos</h1>
+                            <h3 className="panel-title text-light"
+                                style={{ background: "#f7b25d", margin: "5px" }}>
+                                <i className="bi bi-pencil-square"></i> &nbsp; EDITAR MUSICA
+                            </h3>
+                        </div>
                     </div>
-                   
                 </div>
+                {/* COPIAR LOGICA */}
+                <legend style={{ fontSize: "20px", color: " #548cb6" }} >
+                    &nbsp; &nbsp; Para modificar una música de la Escuela de Biodanza, se requiere la siguiente información:</legend>
+                <hr className='mt-3' />
+                {
+                    Object.keys(contact).length > 0 ?
+                        (<ContactForm contact={contact} />) :
+                        (<p className="">&nbsp; &nbsp;Esperando datos de la música...</p>)
+                }
             </div>
-            {/* COPIAR LOGICA */}
-            <h1 className='font-black text-4xl text-sky-900'>Reporte</h1>
-            <hr className='mt-3' />
-            {
-                Object.keys(contact).length > 0 ?
-                    (
-                        <ContactForm contact={contact} />
-                    )
-                    :
-                    (
-                        <p className="">No hay datos del MUSICA</p>
-                    )
-            }
-		</>
-	);
+        </>
+    );
 
 }

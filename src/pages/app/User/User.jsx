@@ -30,7 +30,7 @@ export const User = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaofinal.herokuapp.com/api/alpha/clientes-admin/users',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/users',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.users)
@@ -39,90 +39,90 @@ export const User = () => {
             setLoading(false);
         } catch (error) {
             console.log(error);
-            
+
         }
     }
 
     useEffect(() => { peticionGet(); }, [])
 
-    
+
     const desaGet = async (user) => {
         try {
- /*            if (user.state === 1) {
-                const { value: text } = await swal({
-                    title: "An input!",
-                    text: "Write something interesting:",
-                    content: {
-                        element: "input",
-                        attributes: {
-                            placeholder: "Ingresa la observación"
-                        }
-                    },
-                    buttons: {
-                        cancel: {
-                            text: "Cancelar",
-                            value: null,
-                            visible: true,
-                            className: "",
-                            closeModal: true
-                        },
-                        confirm: {
-                            text: "Ok",
-                            value: true,
-                            visible: true,
-                            className: "",
-                            closeModal: true
-                        }
-                    },
-                    inputValidator: value => {
-                        if (!value) {
-                            return "Necesitas ingresar una observación";
-                        }
-                    }
-                });
-
-                if (text) {
-                    Swal.fire("El técnico fue desactivado", "", "warning");
-                    try {
-                        const response = await axios.post(
-                            `https://alphaofinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
-                            { observacion: text },
-                            { headers: { accept: "application/json", authorization: token } }
-                        );
-                        await peticionGet();
-                        console.log(response.data);
-                    } catch (error) {
-                        console.error(error);
-                    }
-                }
-            } */
+            /*            if (user.state === 1) {
+                           const { value: text } = await swal({
+                               title: "An input!",
+                               text: "Write something interesting:",
+                               content: {
+                                   element: "input",
+                                   attributes: {
+                                       placeholder: "Ingresa la observación"
+                                   }
+                               },
+                               buttons: {
+                                   cancel: {
+                                       text: "Cancelar",
+                                       value: null,
+                                       visible: true,
+                                       className: "",
+                                       closeModal: true
+                                   },
+                                   confirm: {
+                                       text: "Ok",
+                                       value: true,
+                                       visible: true,
+                                       className: "",
+                                       closeModal: true
+                                   }
+                               },
+                               inputValidator: value => {
+                                   if (!value) {
+                                       return "Necesitas ingresar una observación";
+                                   }
+                               }
+                           });
+           
+                           if (text) {
+                               Swal.fire("El técnico fue desactivado", "", "warning");
+                               try {
+                                   const response = await axios.post(
+                                       `https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
+                                       { observacion: text },
+                                       { headers: { accept: "application/json", authorization: token } }
+                                   );
+                                   await peticionGet();
+                                   console.log(response.data);
+                               } catch (error) {
+                                   console.error(error);
+                               }
+                           }
+                       } */
 
             if (user.state == 1) {
                 const { value: text } = await Swal.fire({
-                  input: 'text',
-                  inputLabel: 'Ingrese el motivo por el cual se va a inhabilitar al usuario',
-                  inputPlaceholder: 'Ingresa el motivo para inhabilitar',
-                  showCancelButton: true,
-                  confirmButtonColor: '#3085d6',
-                  cancelButtonColor: '#d33',
-                  inputValidator: (value) => {
-                    if (!value) {
-                      return 'Para inhabilitar al usuario necesitas ingresar un comentario'
+                    input: 'text',
+                    inputLabel: 'Ingrese el motivo por el cual se va a inhabilitar al usuario',
+                    inputPlaceholder: 'Ingresa el motivo para inhabilitar',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    inputValidator: (value) => {
+                        if (!value) {
+                            return 'Para inhabilitar al usuario necesitas ingresar un comentario'
+                        }
                     }
-                  }
                 })
-        
+
                 if (text) {
-                  Swal.fire('El usuario fue inhabilitado exitosamente', '', 'warning')
-                  const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
-                    { observacion: text },
-                    { headers: { 'accept': 'application/json', 'authorization': token } }
-                  );
-                  await peticionGet();
-                  console.log(response.message)
+                    Swal.fire('El usuario fue inhabilitado exitosamente', '', 'warning')
+                    const response = await axios.post(
+                        `https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
+                        { observacion: text },
+                        { headers: { 'accept': 'application/json', 'authorization': token } }
+                    );
+                    await peticionGet();
+                    console.log(response.message)
                 }
-              }
+            }
 
             else {
 
@@ -142,7 +142,7 @@ export const User = () => {
                 if (text) {
                     Swal.fire('El usuario fue activado exitosamente', '', 'warning')
                     const response = await axios.post(
-                        `https://alphaofinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
+                        `https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
                         { observacion: text },
                         { headers: { 'accept': 'application/json', 'authorization': token } }
                     );
@@ -171,7 +171,7 @@ export const User = () => {
         setUser(resultadosBusqueda);
     }
 
-    
+
 
 
     const onChangePage = (tam, size) => {
@@ -210,81 +210,92 @@ export const User = () => {
 
     return (
         <>
-            <div class="full-box text-center ">
-                <div class="full-box tile ">
-                    <div class="full-box tile-title text-center text-titles text-uppercase bg-dark ">
-                        Usuarios
-                    </div>
-                    <div class="full-box tile-icon text-center ">
-                        <i class="bi bi-person-lines-fill text-dark"></i>
-                    </div>
-                    <div class="full tile-number text-titles text-dark">
-                        <p class="full-box">{user.length}</p>
-                        <small>Registros</small>
-                    </div>
-                </div>
-            </div>
-
             <div class="text-center container " style={{ background: " #E2E2E2", }}>
-                <div className="containerInput py-3 ">
-                    <input
-                        className="form-control inputBuscar"
-                        value={busqueda}
-                        placeholder="Búsqueda por Nombre o Usuario"
-                        onChange={handleChange} />
+                <h1 id="publicidad"><i className="zmdi zmdi-account-add"></i> Usuarios </h1>
+                <p >En esta sección podrás visualizar a todos los usuarios registrados en la aplicación
+                     móvil y llevar un control del número total de usuarios que han accedido al sistema. 
+                     De esta forma, podrás deshabilitar o habilitar a los usuarios que infrinjan 
+                     las normas de uso del servicio de la Escuela de Biodanza.
+                </p>
+
+                <div class="full-box text-center ">
+                    <div class="full-box tile ">
+                        <div class="full-box tile-title text-center text-titles text-uppercase bg-dark ">
+                            Usuarios
+                        </div>
+                        <div class="full-box tile-icon text-center ">
+                            <i class="bi bi-person-lines-fill text-dark"></i>
+                        </div>
+                        <div class="full tile-number text-titles text-dark">
+                            <p class="full-box">{user.length}</p>
+                            <small>Registros</small>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="table-responsive">
-                    <br />
-                    {loading ? (
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status">
-                                <span class="sr-only">Loading...</span>
+                <div class="text-center container " style={{ background: " #E2E2E2", }}>
+                    <div className="containerInput py-3 ">
+                        <input
+                            className="form-control inputBuscar"
+                            value={busqueda}
+                            placeholder="Búsqueda por Nombre o Usuario"
+                            onChange={handleChange} />
+                    </div>
+
+                    <div class="table-responsive">
+                        <br />
+                        {loading ? (
+                            <div class="d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                </div>
+                                <p> Cargando....</p>
                             </div>
-                        </div>
-                     ) :
-                        <table class="table table-bordered table-striped ">
-                            <thead className="custom-th">
-                                <tr>
-                                    <th>Usuario</th>
-                                    <th>Nombre</th>
-                                    <th>Email</th>
-                                    <th>Telefono Casa</th>
-                                    <th>Telefono Personal</th>
-                                    <th>Dirección</th>
-                                    <th> Estado </th>
-                                </tr>
-                            </thead >
-                            <tbody >
-                                {mostrarUser && mostrarUser.map((user) => (
-                                    <tr key={user.id}>
-                                        <td>{user.username}</td>
-                                        <td>{user.full_name}</td>
-                                        <td>{user.email}</td>
-                                        <td>{user.home_phone}</td>
-                                        <td>{user.personal_phone}</td>
-                                        <td>{user.address} </td>
-                                        <td>
-                                            <a type="submit" onClick={() => { desaGet(user) }} className={`btn ${user.state ? ' btn-success' : 'btn-danger'} btn-raised btn-xs`}>
-                                                {user.state ? <i className="bi bi-person-check-fill"></i> :
-                                                    <i className="bi bi-person-x-fill"></i>
-                                                }
-                                            </a>
-                                        </td>
+                        ) :
+                            <table class="table table-bordered table-striped ">
+                                <thead className="custom-th" style={{ background: "#f7b25d" }} >
+                                    <tr>
+                                        <th style={{ background: "#f7b25d", color: "#FFFFFF", fontSize: "20px", padding: "10px" }}>Usuario</th>
+                                        <th style={{ background: "#f7b25d", color: "#FFFFFF", fontSize: "20px", padding: "10px" }}>Nombre</th>
+                                        <th style={{ background: "#f7b25d", color: "#FFFFFF", fontSize: "20px", padding: "10px" }} >Email</th>
+                                        <th style={{ background: "#f7b25d", color: "#FFFFFF", fontSize: "20px", padding: "10px" }} >Teléfono Casa</th>
+                                        <th style={{ background: "#f7b25d", color: "#FFFFFF", fontSize: "20px", padding: "10px" }}>Teléfono Personal</th>
+                                        <th style={{ background: "#f7b25d", color: "#FFFFFF", fontSize: "20px", padding: "10px" }} >Dirección</th>
+                                        <th style={{ background: "#f7b25d", color: "#FFFFFF", fontSize: "20px", padding: "10px" }}> Estado </th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    }
-                    <br />
-                    <Pagination
-                        defaultCurrent={1}
-                        total={contadorTotal}
-                        showSizeChanger
-                        onChange={onChangePage}
-                    />
+                                </thead >
+                                <tbody >
+                                    {mostrarUser && mostrarUser.map((user) => (
+                                        <tr key={user.id}>
+                                            <td>{user.username}</td>
+                                            <td>{user.full_name}</td>
+                                            <td>{user.email}</td>
+                                            <td>{user.home_phone}</td>
+                                            <td>{user.personal_phone}</td>
+                                            <td>{user.address} </td>
+                                            <td>
+                                                <a type="submit" onClick={() => { desaGet(user) }} className={`btn ${user.state ? ' btn-success' : 'btn-danger'} btn-raised btn-xs`}>
+                                                    {user.state ? <i className="bi bi-person-check-fill"></i> :
+                                                        <i className="bi bi-person-x-fill"></i>
+                                                    }
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        }
+                        <br />
+                        <Pagination
+                            defaultCurrent={1}
+                            total={contadorTotal}
+                            showSizeChanger
+                            onChange={onChangePage}
+                        />
+                    </div>
                 </div>
             </div>
+
         </>)
 };
 

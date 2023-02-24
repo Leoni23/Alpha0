@@ -14,7 +14,7 @@ export const EditReserva = () => {
         const getReserva = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaofinal.herokuapp.com/api/alpha/events/evento-get/${id}`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/events/evento-get/${id}`,
                     { headers: { 'authorization': token } }
                 );
                 const eventos = { ...response.data.data.eventos, id }
@@ -32,23 +32,11 @@ export const EditReserva = () => {
     console.log(reserva)
     return (
         <>
-
-            {/* 
-			<div className="container-fluid">
-				<div className="page-header">
-					<h1 className="text-titles">
-                    <i className="bi bi-file-earmark-richtext-fill"></i> Edicion{" "}
-						<small>DE Eventos</small>
-					</h1>
-				</div>
-				<p className="lead">
-					aqui se va poder modificar la info de musica
-				</p>
-			</div> */}
             <div style={{ margin: "12px" }} >
                 <div className="container-fluid">
                     <div className="panel panel-info">
                         <div className="panel-heading">
+                        <h1 id="publicidad">Eventos</h1>
                             <h3 className="panel-title text-light"
                                 style={{ background: "#f7b25d", margin: "5px" }}>
                                 <i className="bi bi-pencil-square"></i> &nbsp; EDITAR EVENTO

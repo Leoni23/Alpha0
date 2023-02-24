@@ -18,7 +18,7 @@ export const LandingPage = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaofinal.herokuapp.com/api/alpha/banner-publico/fotos',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/banner-publico/fotos',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.banners)
@@ -32,7 +32,7 @@ export const LandingPage = () => {
     const getContact = async () => {
         try {
             const response = await axios.get(
-                'https://alphaofinal.herokuapp.com/api/alpha/contactos-publico',
+                'https://alphaomegafinal.herokuapp.com/api/alpha/contactos-publico',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.contactanos)

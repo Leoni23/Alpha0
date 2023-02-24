@@ -9,18 +9,41 @@ export const PublicidadForm = ({ publi }) => {
     const navigate = useNavigate();
     const [error, setError] = useState(false);
     const [mensaje, setMensaje] = useState('');
-    
     const token = localStorage.getItem('token');
-
     const [titulo, setTitulo] = useState(publi?.titulo);
     const [descripcion, setDescripcion] = useState(publi?.descripcion);
     const [evento, setEvento] = useState(publi?.evento);
     const [image, setImage] = useState(null);
  
-
+    const [isTitleValid, setIsTitleValid] = useState(true);
+    const [isDescriptionValid, setIsDescriptionValid] = useState(true);
+    const [showAlert, setShowAlert] = useState(false);
+    const [isDateValid, setIsDateValid] = useState(true);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (evento < new Date()) {
+            setIsDateValid(false);
+            return;
+        }
+
+        if (titulo.length < 4) {
+            setIsTitleValid(false);
+            return;
+        }
+
+        if (descripcion.length < 4) {
+            setIsDescriptionValid(false);
+            return;
+        } else {
+            setIsDescriptionValid(true);
+        }
+
+
+        setIsTitleValid(true);
+        setIsDateValid(true);
+        setShowAlert(true);
+
         const data = new FormData();
         data.append("titulo", titulo);
         data.append("evento", evento);
@@ -34,7 +57,7 @@ export const PublicidadForm = ({ publi }) => {
             console.log(publi)
             if (publi?.id) {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/publicidad/${publi.id}/update`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/${publi.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
                     
@@ -43,7 +66,7 @@ export const PublicidadForm = ({ publi }) => {
                   setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/publicidad/create`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );
@@ -57,7 +80,7 @@ export const PublicidadForm = ({ publi }) => {
             console.log(error);
         }
     }
-
+    function VerAlert() { window.history.back(); }
     return (
         <>
             <div className="panel-body">
@@ -67,26 +90,30 @@ export const PublicidadForm = ({ publi }) => {
                     }
                     <fieldset>
                         <legend><i className="zmdi zmdi-account-box"></i> &nbsp; Información para publicidad</legend>
-                        <div className="container-fluid">
+                        <div className="container-fluid my-3">
                             <div className="row">
                                 <div className="col-xs-12 col-sm-6">
                                     <div className="form-group label-floating">
-                                        <label htmlFor='titulo' className="control-label">titulo *</label>
+                                        <label htmlFor='titulo' className="control-label">Título:</label>
                                         <input
                                             className="form-control"
                                             id='titulo'
                                             type="text"
-                                            placeholder='titulo'
+                                            placeholder='Ingresa un título'
                                             name='titulo'
                                             value={titulo}
                                             onChange={(e) => setTitulo(e.target.value)}
-
                                             required />
+                                        {!isTitleValid && (
+                                            <div style={{ color: "red" }}>
+                                                El título debe tener como mínimo 4 caracteres.
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                                 <div className="col-xs-12 col-sm-6">
                                     <div className="form-group label-floating">
-                                        <label htmlFor='imagen' className="control-label">Imagen *</label>
+                                        <label htmlFor='imagen' className="control-label">Imágen:</label>
                                         <input
                                             id='imagen'
                                             type="file"
@@ -95,29 +122,34 @@ export const PublicidadForm = ({ publi }) => {
                                             className='form-control'
                                             accept=".jpg, .png, .jpeg"
                                             onChange={(e) => setImage(e.target.files[0])}
-
+                                            required
                                              />
                                     </div>
                                 </div>
                                 <div className="col-xs-12 col-sm-6">
                                     <div className="form-group label-floating">
-                                        <label htmlFor='descripcion' className="control-label">Descripcion *</label>
+                                    <label htmlFor='descripcion' className="control-label">Descripción</label>
                                         <textarea
                                             id='descripcion'
-                                            type="text"
+                                            type="attention_schedule"
                                             className="form-control"
-                                            placeholder='descripcion'
+                                            placeholder='Ingresa una nueva descripción'
                                             name='descripcion'
                                             value={descripcion}
                                             onChange={(e) => setDescripcion(e.target.value)}
                                             required
                                         />
+                                        {!isDescriptionValid && (
+                                            <div style={{ color: "red" }}>
+                                                La descripción debe tener al menos 4 letras.
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
 
                                 <div className="col-xs-12 col-sm-6">
                                     <div className="form-group label-floating">
-                                        <label htmlFor='evento' className="control-label">Evento</label>
+                                    <label htmlFor='evento' className="control-label">Fecha y Hora</label>
                                         <input
                                             className="form-control"
                                             id='evento'
@@ -128,6 +160,11 @@ export const PublicidadForm = ({ publi }) => {
                                             onChange={(e) => setEvento(e.target.value)}
                                             required
                                         />
+                                        {!isDateValid && (
+                                            <div style={{ color: "red" }}>
+                                                La fecha y hora no puede ser anterior a la fecha y hora actual.
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
                             </div>
@@ -137,12 +174,29 @@ export const PublicidadForm = ({ publi }) => {
                         </div>
                     </fieldset>
 
-                    <p className="text-center">
-                        <button value={publi?.id ? 'Actualizar' : 'Guardar'} type="submit" className="btn btn-info btn-raised btn-sm" >
-                            <i className="zmdi zmdi-floppy"></i> GUARDAR
-
+                    {<p className="text-center">
+                        <button value={publi?.id ? 'Actualizar' : 'Guardar'} type="submit" className="btn text-light btn-raised btn-sm"
+                            style={{ background: "#427296", margin: "10px" }}
+                            onMouseEnter={(e) => e.target.style.background = "#2d5b89"}
+                            onMouseLeave={(e) => e.target.style.background = "#427296"}>
+                            <i className="zmdi zmdi-floppy"></i> Guardar información
                         </button>
-                    </p>
+                        {showAlert && (
+                            <div className="alert-container1">
+                                <div className="alert1">
+                                    <h5 style={{ color: " #2D4912" }}>
+                                        <i class="bi bi-check-circle-fill" style={{ color: " #2D4912", marginRight: "8px" }}></i>
+                                        El evento se guardó correctamente
+                                    </h5>
+                                    <h2 onClick={VerAlert}
+                                        className="btn btn-raised btn-sm"
+                                        onMouseEnter={(e) => e.target.style.background = "#CDCDCD"}
+                                        onMouseLeave={(e) => e.target.style.background = "#E6E6E6"}
+                                        style={{ color: " #2D4912", margin: "15px", border: "1px solid gray" }}>Aceptar</h2>
+                                </div>
+                            </div>
+                        )}
+                    </p>}
                 </form>
             </div>
 

@@ -54,7 +54,7 @@ export const ReservaForm = ({ reserva }) => {
             setIsDescriptionValid(true);
         }
 
-        if (isNaN(cupos) || cupos < 10 || cupos > 300) {
+        if (isNaN(cupos) || cupos < 5 || cupos > 300) {
             setIsCuposValid(false);
             return;
         } else {
@@ -87,7 +87,7 @@ export const ReservaForm = ({ reserva }) => {
             console.log(reserva)
             if (reserva?.id) {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/events/eventupdate/${reserva.id}`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/events/eventupdate/${reserva.id}`,
                     data,
                     { headers: { 'authorization': token } },
                     console.log(data)
@@ -96,7 +96,7 @@ export const ReservaForm = ({ reserva }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaofinal.herokuapp.com/api/alpha/events/event-create`,
+                    `https://alphaomegafinal.herokuapp.com/api/alpha/events/event-create`,
                     data,
                     { headers: { 'authorization': token } }
                 );
@@ -121,7 +121,7 @@ export const ReservaForm = ({ reserva }) => {
                             <div className="row">
                                 <div className="col-xs-12 col-sm-6">
                                     <div className="form-group label-floating">
-                                        <label htmlFor='titulo' className="control-label">Título</label>
+                                        <label htmlFor='titulo' className="control-label">Título: </label>
                                         <input
                                             className="form-control"
                                             id='titulo'
@@ -140,7 +140,7 @@ export const ReservaForm = ({ reserva }) => {
                                 </div>
                                 <div className="col-xs-12 col-sm-6">
                                     <div className="form-group label-floating">
-                                        <label htmlFor='imagen' className="control-label">Imágen</label>
+                                        <label htmlFor='imagen' className="control-label">Imágen:</label>
                                         <input
                                             id='imagen'
                                             type="file"
@@ -209,7 +209,7 @@ export const ReservaForm = ({ reserva }) => {
                                         />
                                         {!isCuposValid && (
                                             <div style={{ color: "red" }}>
-                                                El número de cupos debe ser un número entre 10 y 300.
+                                                El número de cupos debe ser un número entre 5 y 300.
                                             </div>
                                         )}
                                     </div>
