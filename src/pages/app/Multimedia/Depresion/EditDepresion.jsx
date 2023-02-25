@@ -14,7 +14,7 @@ export const EditDepresion = () =>{
         const getDepresion = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicFour/${id}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicFour/${id}`,
                     { headers: { 'authorization': token } }
                     );
                 const musicsFour = {...response.data.data.musicsFour, id }

@@ -87,7 +87,7 @@ export const ReservaForm = ({ reserva }) => {
             console.log(reserva)
             if (reserva?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/events/eventupdate/${reserva.id}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/events/eventupdate/${reserva.id}`,
                     data,
                     { headers: { 'authorization': token } },
                     console.log(data)
@@ -96,7 +96,7 @@ export const ReservaForm = ({ reserva }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/events/event-create`,
+                    `https://alphaofin.herokuapp.com/api/alpha/events/event-create`,
                     data,
                     { headers: { 'authorization': token } }
                 );

@@ -14,7 +14,7 @@ export const Forgot_password = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/forgot-password',
+                'https://alphaofin.herokuapp.com/api/alpha/forgot-password',
                 { email },
                 { headers: { 'accept': 'application/json' } }
             )

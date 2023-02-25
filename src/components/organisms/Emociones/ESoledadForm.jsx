@@ -52,7 +52,7 @@ export const ESoledadForm = ({ soledad }) => {
             console.log(soledad)
             if (soledad?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/soledad/${1}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/soledad/${1}/update`,
                     data,
                     { headers: { 'authorization': token } }
                 );

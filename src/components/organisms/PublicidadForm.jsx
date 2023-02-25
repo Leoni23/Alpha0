@@ -57,7 +57,7 @@ export const PublicidadForm = ({ publi }) => {
             console.log(publi)
             if (publi?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/${publi.id}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/publicidad/${publi.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
                     
@@ -66,7 +66,7 @@ export const PublicidadForm = ({ publi }) => {
                   setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/create`,
+                    `https://alphaofin.herokuapp.com/api/alpha/publicidad/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );

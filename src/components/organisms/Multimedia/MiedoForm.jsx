@@ -44,7 +44,7 @@ export const MiedoForm = ({ miedo }) => {
             console.log(miedo)
             if (miedo?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicThree/${miedo.id}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicThree/${miedo.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
 
@@ -53,7 +53,7 @@ export const MiedoForm = ({ miedo }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicThree/create`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicThree/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );

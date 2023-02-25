@@ -25,7 +25,7 @@ export const Coment = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/comments/vercomment',
+                'https://alphaofin.herokuapp.com/api/alpha/comments/vercomment',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.comments)
@@ -45,7 +45,7 @@ export const Coment = () => {
             const confirmation = confirm("Are you sure?")
             if (confirmation) {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/comments/${id}/destroy`,
+                    `https://alphaofin.herokuapp.com/api/alpha/comments/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 console.log(response)

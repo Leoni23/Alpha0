@@ -22,7 +22,7 @@ export const Profile = () => {
 	const getPerfil = async () => {
 		try {
 			const response = await axios.get(
-				'https://alphaomegafinal.herokuapp.com/api/alpha/profile',
+				'https://alphaofin.herokuapp.com/api/alpha/profile',
 				{ headers: { 'accept': 'application/json', 'authorization': token } }
 			);
 			console.log(response.data.data)
@@ -43,7 +43,7 @@ export const Profile = () => {
 		e.preventDefault();
 		try {
 			const response = await axios.post(
-				'https://alphaomegafinal.herokuapp.com/api/alpha/profile',
+				'https://alphaofin.herokuapp.com/api/alpha/profile',
 				{ ...perfil }, { headers: { 'accept': 'application/json', 'authorization': token } }
 
 			);
@@ -66,7 +66,7 @@ export const Profile = () => {
 		try {
 			console.log(image);
 			const response = await axios.post(
-				`https://alphaomegafinal.herokuapp.com/api/alpha/profile/avatar`,
+				`https://alphaofin.herokuapp.com/api/alpha/profile/avatar`,
 				data,
 				{ headers: { 'authorization': token } }
 			);

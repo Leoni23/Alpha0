@@ -14,7 +14,7 @@ export const EditSoledad = () =>{
         const getSoledad = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicTwo/${id}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicTwo/${id}`,
                     { headers: { 'authorization': token } }
                     );
                 const musicTwo = {...response.data.data.musicsTwo, id }

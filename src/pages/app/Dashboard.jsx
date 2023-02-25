@@ -19,7 +19,7 @@ export const Dashboard = () => {
         try {
             logout();
             await axios.post(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/logout',
+                'https://alphaofin.herokuapp.com/api/alpha/logout',
                 {}, { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             navigate('/login', { replace: true });
@@ -31,7 +31,7 @@ export const Dashboard = () => {
     const getPerfil = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/profile',
+                'https://alphaofin.herokuapp.com/api/alpha/profile',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data)

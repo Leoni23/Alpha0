@@ -14,7 +14,7 @@ export const EmoEditSoledad = () =>{
         const getSoledad = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/soledad/${1}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/soledad/${1}`,
                     { headers: { 'authorization': token } }
                     );
                 const musicsOnes = {...response.data.data.iras, id }
@@ -46,7 +46,7 @@ export const EmoEditSoledad = () =>{
                 </div>
                 {/* COPIAR LOGICA */}
                 <legend style={{ fontSize: "20px", color: " #548cb6" }} >
-                    &nbsp; &nbsp; Para modificar una emoción de la Escuela de Biodanza, se requiere la siguiente información:</legend>
+                    &nbsp; &nbsp; Para modificar una emoción de la Escuela de Biodanza,ssssss se requiere la siguiente información:</legend>
                 <hr className='mt-3' />
                 {
                     Object.keys(soledad).length > 0 ?

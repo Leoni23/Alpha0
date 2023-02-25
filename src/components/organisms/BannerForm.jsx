@@ -31,7 +31,7 @@ export const BannerForm = () => {
         console.log(data)
         try {
             const response = await axios.post(
-                `https://alphaomegafinal.herokuapp.com/api/alpha/banner/create`,
+                `https://alphaofin.herokuapp.com/api/alpha/banner/create`,
                 data,
                 { headers: { 'authorization': token } }
             );
@@ -47,7 +47,7 @@ export const BannerForm = () => {
     const getBanner = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/banner-publico/fotos',
+                'https://alphaofin.herokuapp.com/api/alpha/banner-publico/fotos',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data)
@@ -63,7 +63,7 @@ export const BannerForm = () => {
             const confirmation = confirm("Estas seguro que desea eliminar esta imagen")
             if (confirmation) {
                 await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/banner/${id}/destroy`,
+                    `https://alphaofin.herokuapp.com/api/alpha/banner/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 await getBanner();

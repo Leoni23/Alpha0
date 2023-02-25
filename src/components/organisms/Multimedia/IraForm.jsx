@@ -38,7 +38,7 @@ export const IraForm = ({ ira }) => {
             console.log(ira)
             if (ira?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicOne/${ira.id}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicOne/${ira.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
                 );
@@ -46,7 +46,7 @@ export const IraForm = ({ ira }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicOne/create`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicOne/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );

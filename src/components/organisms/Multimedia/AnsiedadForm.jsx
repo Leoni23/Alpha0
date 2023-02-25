@@ -43,7 +43,7 @@ export const AnsiedadForm = ({ ansiedad }) => {
             console.log(ansiedad)
             if (ansiedad?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicFive/${ansiedad.id}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicFive/${ansiedad.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
 
@@ -52,7 +52,7 @@ export const AnsiedadForm = ({ ansiedad }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicFive/create`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicFive/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );

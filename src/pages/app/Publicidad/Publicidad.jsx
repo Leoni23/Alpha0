@@ -13,7 +13,7 @@ export const Publicidad = () => {
     const getPublicidad = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/publ',
+                'https://alphaofin.herokuapp.com/api/alpha/publicidad/publ',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data)
@@ -31,7 +31,7 @@ export const Publicidad = () => {
             const confirmation = confirm("Estas seguro que desea eliminar permanentamente la publidad ")
             if (confirmation) {
                 await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/${id}/destroy`,
+                    `https://alphaofin.herokuapp.com/api/alpha/publicidad/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 await getPublicidad();

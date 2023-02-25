@@ -15,7 +15,7 @@ export const Ansiedad = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/musicFive/lista',
+                'https://alphaofin.herokuapp.com/api/alpha/musicFive/lista',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data)
@@ -34,7 +34,7 @@ export const Ansiedad = () => {
             const confirmation = confirm("Estas seguro que desea eliminar esta imagen")
             if (confirmation) {
                 await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicFive/${id}/destroy`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicFive/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 await getAnsiedad();

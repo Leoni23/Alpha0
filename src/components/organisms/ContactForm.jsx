@@ -49,7 +49,7 @@ export const ContactForm = ({ contact }) => {
             console.log(contact)
             if (contact?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/contactos/${contact.id}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/contactos/${contact.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
                 );
@@ -57,7 +57,7 @@ export const ContactForm = ({ contact }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com.com/api/alpha/contactos/create`,
+                    `https://alphaofin.herokuapp.com/api/alpha/contactos/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );

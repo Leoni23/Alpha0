@@ -14,7 +14,7 @@ export const ShowReserva = () => {
         const getReport = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/events/evento-get/${id}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/events/evento-get/${id}`,
                     { headers: { accept: "application/json", authorization: token } }
                 );
 

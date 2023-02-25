@@ -14,7 +14,7 @@ export const EditContact = () =>{
         const getContact = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/contactos/${id}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/contactos/${id}`,
                     { headers: { 'authorization': token } }
                     );
                 const contactanos = {...response.data.data.contactanos, id}

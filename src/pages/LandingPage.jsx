@@ -18,7 +18,7 @@ export const LandingPage = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/banner-publico/fotos',
+                'https://alphaofin.herokuapp.com/api/alpha/banner-publico/fotos',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.banners)
@@ -32,7 +32,7 @@ export const LandingPage = () => {
     const getContact = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/contactos-publico',
+                'https://alphaofin.herokuapp.com/api/alpha/contactos-publico',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.contactanos)
@@ -57,10 +57,10 @@ export const LandingPage = () => {
                         </button>
                         <div class="collapse navbar-collapse" id="navbarResponsive">
                             <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
-                                <li class="nav-item"><a class="nav-link me-lg-3" href="#Metodologias">Metodologia</a></li>
-                                <li class="nav-item"><a class="nav-link me-lg-3" href="#Simbolo">Simbolo</a></li>
+                                <li class="nav-item"><a class="nav-link me-lg-3" href="#Metodologias">Metodología</a></li>
+                                <li class="nav-item"><a class="nav-link me-lg-3" href="#Simbolo">Símbolo</a></li>
                                 <li class="nav-item"><a class="nav-link me-lg-3" href="#RedesSociales">Redes Sociales</a></li>
-                                <li class="nav-item"><button class="nav-link me-lg-3 btn rounded-pill px-3 mb-2 mb-lg-0" >  <Link id="inicio" class="btn rounded-pill" to="login" style={{ textDecoration: "none" }}>Inicio de Sesion</Link></button></li>
+                                <li class="nav-item"><button class="nav-link me-lg-3 btn rounded-pill px-3 mb-2 mb-lg-0" >  <Link id="inicio" class="btn rounded-pill" to="login" style={{ textDecoration: "none" }}>Inicio de Sesión</Link></button></li>
                             </ul>
 
                         </div>

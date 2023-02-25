@@ -17,7 +17,7 @@ export const Home = () => {
     const peticionGet = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/users',
+                'https://alphaofin.herokuapp.com/api/alpha/clientes-admin/users',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.users)
@@ -34,7 +34,7 @@ export const Home = () => {
     const getReserva = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/events/eventlist',
+                'https://alphaofin.herokuapp.com/api/alpha/events/eventlist',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
 
@@ -51,7 +51,7 @@ export const Home = () => {
     const getPublicidad = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/publ',
+                'https://alphaofin.herokuapp.com/api/alpha/publicidad/publ',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data)
@@ -68,7 +68,7 @@ export const Home = () => {
     const getContact = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/contactos',
+                'https://alphaofin.herokuapp.com/api/alpha/contactos',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.contactanos)
@@ -85,7 +85,7 @@ export const Home = () => {
             const confirmation = confirm("Are you sure?")
             if (confirmation) {
                 await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/contactos/${id}/destroy`,
+                    `https://alphaofin.herokuapp.com/api/alpha/contactos/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 await getContact();
@@ -102,7 +102,7 @@ export const Home = () => {
     const getBanner = async () => {
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/banner-publico/fotos',
+                'https://alphaofin.herokuapp.com/api/alpha/banner-publico/fotos',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.banners)

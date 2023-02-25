@@ -21,7 +21,7 @@ export const ShowEmociones = () => {
         const getMiedo = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/miedo/${1}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/miedo/${1}`,
                     { headers: { accept: "application/json", authorization: token } }
                 );
                 const user1 = { ...response.data.data.iras, id };
@@ -38,7 +38,7 @@ export const ShowEmociones = () => {
         const getDepre = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/depresion/${1}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/depresion/${1}`,
                     { headers: { accept: "application/json", authorization: token } }
                 );
                 const user2 = { ...response.data.data.iras, id };
@@ -55,7 +55,7 @@ export const ShowEmociones = () => {
         const getIra = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/ira/${10}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/ira/${10}`,
                     { headers: { accept: "application/json", authorization: token } }
                 );
                 const user3 = { ...response.data.data.iras, id };
@@ -71,7 +71,7 @@ export const ShowEmociones = () => {
         const getAnsi = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/ansiedad/${1}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/ansiedad/${1}`,
                     { headers: { accept: "application/json", authorization: token } }
                 );
                 const user3 = { ...response.data.data.iras, id };
@@ -87,7 +87,7 @@ export const ShowEmociones = () => {
         const getSoledad = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/soledad/${1}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/soledad/${1}`,
                     { headers: { accept: "application/json", authorization: token } }
                 );
                 const user3 = { ...response.data.data.iras, id };

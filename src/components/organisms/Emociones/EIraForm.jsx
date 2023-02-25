@@ -32,7 +32,7 @@ export const EIraForm = ({ ira }) => {
             console.log(ira)
             if (ira?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/ira/${10}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/ira/${10}/update`,
                     data,
                     { headers: { 'authorization': token } }
                 );

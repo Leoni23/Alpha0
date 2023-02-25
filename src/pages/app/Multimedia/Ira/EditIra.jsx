@@ -14,7 +14,7 @@ export const EditIra = () => {
         const getIra = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicOne/${id}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicOne/${id}`,
                     { headers: { 'authorization': token } }
                 );
                 const musicsOnes = { ...response.data.data.musicsOne, id }

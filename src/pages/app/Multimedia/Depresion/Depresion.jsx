@@ -15,7 +15,7 @@ export const Depresion = () => {
          setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/musicFour/lista',
+                'https://alphaofin.herokuapp.com/api/alpha/musicFour/lista',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data)
@@ -34,7 +34,7 @@ export const Depresion = () => {
             const confirmation = confirm("Estas seguro que desea eliminar esta imagen")
             if (confirmation) {
                 await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicFour/${id}/destroy`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicFour/${id}/destroy`,
                     { headers: { 'accept': 'application/json', 'authorization': token } }
                 );
                 await getDepresion();

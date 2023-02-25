@@ -30,7 +30,7 @@ export const User = () => {
         setLoading(true);
         try {
             const response = await axios.get(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/users',
+                'https://alphaofin.herokuapp.com/api/alpha/clientes-admin/users',
                 { headers: { 'accept': 'application/json', 'authorization': token } }
             );
             console.log(response.data.data.users)
@@ -85,7 +85,7 @@ export const User = () => {
                                Swal.fire("El técnico fue desactivado", "", "warning");
                                try {
                                    const response = await axios.post(
-                                       `https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
+                                       `https://alphaofin.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
                                        { observacion: text },
                                        { headers: { accept: "application/json", authorization: token } }
                                    );
@@ -115,7 +115,7 @@ export const User = () => {
                 if (text) {
                     Swal.fire('El usuario fue inhabilitado exitosamente', '', 'warning')
                     const response = await axios.post(
-                        `https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
+                        `https://alphaofin.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
                         { observacion: text },
                         { headers: { 'accept': 'application/json', 'authorization': token } }
                     );
@@ -142,7 +142,7 @@ export const User = () => {
                 if (text) {
                     Swal.fire('El usuario fue activado exitosamente', '', 'warning')
                     const response = await axios.post(
-                        `https://alphaomegafinal.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
+                        `https://alphaofin.herokuapp.com/api/alpha/clientes-admin/${user.id}/destroy`,
                         { observacion: text },
                         { headers: { 'accept': 'application/json', 'authorization': token } }
                     );

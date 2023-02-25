@@ -19,7 +19,7 @@ export const ResetPassword = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/reset-password',
+                'https://alphaofin.herokuapp.com/api/alpha/reset-password',
                 { token, email, password, password_confirmation },
                 { headers: { 'accept': 'application/json' } }
             )

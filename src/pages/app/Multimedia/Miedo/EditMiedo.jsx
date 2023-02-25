@@ -14,7 +14,7 @@ export const EditMiedo = () =>{
         const getMiedo = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicThree/${id}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicThree/${id}`,
                     { headers: { 'authorization': token } }
                     );
                     

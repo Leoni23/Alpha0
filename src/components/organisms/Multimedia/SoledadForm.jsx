@@ -41,7 +41,7 @@ export const SoledadForm = ({ soledad }) => {
             console.log(soledad)
             if (soledad?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicTwo/${soledad.id}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicTwo/${soledad.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
 
@@ -50,7 +50,7 @@ export const SoledadForm = ({ soledad }) => {
                 setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/musicTwo/create`,
+                    `https://alphaofin.herokuapp.com/api/alpha/musicTwo/create`,
                     data,
                     { headers: { 'authorization': token } }
                 );

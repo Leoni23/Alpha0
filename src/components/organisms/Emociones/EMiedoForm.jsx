@@ -51,7 +51,7 @@ export const EMiedoForm = ({ miedo }) => {
             console.log(miedo)
             if (miedo?.id) {
                 const response = await axios.post(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/miedo/${1}/update`,
+                    `https://alphaofin.herokuapp.com/api/alpha/miedo/${1}/update`,
                     data,
                     { headers: { 'authorization': token } }
                 );

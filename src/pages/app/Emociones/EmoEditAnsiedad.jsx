@@ -14,7 +14,7 @@ export const EmoEditAnsiedad = () =>{
         const getAnsiedad = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/ansiedad/${1}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/ansiedad/${1}`,
                     { headers: { 'authorization': token } }
                     );
                 const musicsOnes = {...response.data.data.iras, id }

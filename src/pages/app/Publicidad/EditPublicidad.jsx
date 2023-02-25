@@ -15,7 +15,7 @@ export const EditPublicidad = () =>{
         const getPublicidad = async () => {
             try {
                 const response = await axios.get(
-                    `https://alphaomegafinal.herokuapp.com/api/alpha/publicidad/${id}`,
+                    `https://alphaofin.herokuapp.com/api/alpha/publicidad/${id}`,
                     { headers: { 'authorization': token } }
                     );
                 const publ = {...response.data.data.publ, id }

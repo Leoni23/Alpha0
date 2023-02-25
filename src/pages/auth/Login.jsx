@@ -19,7 +19,7 @@ export const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post(
-                'https://alphaomegafinal.herokuapp.com/api/alpha/login',
+                'https://alphaofin.herokuapp.com/api/alpha/login',
                 { email, password },
                 { headers: { 'accept': 'application/json' } }
             );
