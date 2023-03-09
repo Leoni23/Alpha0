@@ -371,9 +371,6 @@ export const LandingPage = () => {
                                     </div>
                                 ))
                             }
-                            <div class="col-4">
-                                <h4>Hola</h4>
-                            </div>
                         </div>
                     </div>
                 </footer>
