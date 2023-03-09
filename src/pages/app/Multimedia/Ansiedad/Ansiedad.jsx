@@ -31,7 +31,7 @@ export const Ansiedad = () => {
         try {
             console.warn(id);
 
-            const confirmation = confirm("Estas seguro que desea eliminar esta imagen")
+            const confirmation = confirm("Estas seguro que desea eliminar este audio")
             if (confirmation) {
                 await axios.get(
                     `https://alphaofin.herokuapp.com/api/alpha/musicFive/${id}/destroy`,

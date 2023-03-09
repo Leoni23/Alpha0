@@ -13,7 +13,7 @@ export const CreatePublicidad = () => {
                             style={{ background: "#427296", margin: "5px" }}>
                             <i className="zmdi zmdi-plus"></i>&nbsp;CREAR PUBLICIDAD</h3>
                         <legend style={{ fontSize: "20px", color: " #548cb6" }} >
-                            &nbsp;  Para crear una nueva lista de reproducción en la emoción ira,
+                            &nbsp;  Para crear una nueva publicidad
                             es necesario y se requiere proporcionar la siguiente información:</legend>
                         <hr className='mt-3' />
                     </div>

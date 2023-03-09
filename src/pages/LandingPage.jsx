@@ -331,32 +331,6 @@ export const LandingPage = () => {
                     </div>
                 </section>
 
-                {/*  <footer class="bg-black text-center py-5">
-                    
-                        <div class="container">
-                            <div class=" row align-items-start">
-                                <h3>Contactos</h3>
-                                <div class="row gx-4 gx-lg-5">
-                                    {
-                                        contact.map((contact) => (
-                                            <div key={contact.id} class="col-md-4 mb-5">
-                                                <div class="card h-100">
-                                                    <div class="card-body">
-                                                        <h2 class="card-title">{contact.nombre} {contact.apellido} </h2>
-                                                        <p class="card-text">{contact.correo} .</p>
-                                                        <p class="card-text">{contact.puesto} .</p>
-                                                        <p class="card-text">{contact.contactanos} .</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        ))
-                                    }
-                                </div>
-                            </div> <br />
-                        </div>
-                    
-                </footer> */}
-
                 <footer class="bg-black text-center py-5">
                     <div class="container">
                         <h3 class="text-white">Contactos</h3>

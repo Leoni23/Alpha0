@@ -9,7 +9,7 @@ export const IraForm = ({ ira }) => {
     const [error, setError] = useState(false);
     const [mensaje, setMensaje] = useState('');
     const token = localStorage.getItem('token');
-    
+
     const [image, setImage] = useState(null);
     const [tema, setTema] = useState(ira?.tema || "");
     const [descripcion, setDescripcion] = useState(ira?.descripcion || "");
@@ -165,11 +165,20 @@ export const IraForm = ({ ira }) => {
                                             type="file"
                                             name='audio'
                                             accept=".mp3"
-                                            onChange={(e) => setAudio(e.target.files[0])}
+                                            onChange={(e) => {
+                                                const file = e.target.files[0];
+                                                if (file.size > 2 * 1024 * 1024) {
+                                                    alert("El archivo debe ser menor a 2MB");
+                                                    e.target.value = null; // borra el archivo seleccionado
+                                                } else {
+                                                    setAudio(file);
+                                                }
+                                            }}
                                             required
                                         />
                                     </div>
                                 </div>
+
                             </div>
                             <div>
                                 {mensaje}

@@ -82,7 +82,7 @@ export const Home = () => {
         try {
             console.warn(id);
             // eslint-disable-next-line no-restricted-globals
-            const confirmation = confirm("Are you sure?")
+            const confirmation = confirm("Esta seguro que desea eliminar este contacto permanentemente")
             if (confirmation) {
                 await axios.get(
                     `https://alphaofin.herokuapp.com/api/alpha/contactos/${id}/destroy`,

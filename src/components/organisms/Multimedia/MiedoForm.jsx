@@ -170,7 +170,15 @@ export const MiedoForm = ({ miedo }) => {
                                             type="file"
                                             name='audio'
                                             accept=".mp3"
-                                            onChange={(e) => setAudio(e.target.files[0])}
+                                            onChange={(e) => {
+                                                const file = e.target.files[0];
+                                                if (file.size > 2 * 1024 * 1024) {
+                                                    alert("El archivo debe ser menor a 2MB");
+                                                    e.target.value = null; // borra el archivo seleccionado
+                                                } else {
+                                                    setAudio(file);
+                                                }
+                                            }}
                                             required
                                         />
                                     </div>

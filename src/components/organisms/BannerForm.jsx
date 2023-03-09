@@ -99,6 +99,9 @@ export const BannerForm = () => {
                                             name='name'
                                             value={nombrebanner}
                                             onChange={(e) => setNombre(e.target.value)}
+                                            minLength="4"
+                                            maxLength="30"
+                                            required
                                         />
                                     </div>
                                 </div>

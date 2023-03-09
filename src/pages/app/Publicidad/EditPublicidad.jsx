@@ -52,7 +52,7 @@ export const EditPublicidad = () =>{
                 {
                     Object.keys(publi).length > 0 ?
                         (<PublicidadForm publi={publi} />) :
-                        (<p className="">&nbsp; &nbsp;Esperando datos de la música...</p>)
+                        (<p className="">&nbsp; &nbsp;Esperando datos de la publicidad...</p>)
                 }
             </div>
         </>

@@ -188,7 +188,7 @@ export const ContactForm = ({ contact }) => {
                                 <div className="alert1">
                                     <h5 style={{ color: " #2D4912" }}>
                                         <i class="bi bi-check-circle-fill" style={{ color: " #2D4912", marginRight: "8px" }}></i>
-                                        El evento se guardó correctamente
+                                        El contacto se guardó correctamente
                                     </h5>
                                     <h2 onClick={VerAlert}
                                         className="btn btn-raised btn-sm"

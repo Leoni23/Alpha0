@@ -39,14 +39,14 @@ export const EditContact = () =>{
                             <h1 id="publicidad">Contactos</h1>
                             <h3 className="panel-title text-light"
                                 style={{ background: "#f7b25d", margin: "5px" }}>
-                                <i className="bi bi-pencil-square"></i> &nbsp; EDITAR MUSICA
+                                <i className="bi bi-pencil-square"></i> &nbsp; EDITAR CONTACTOS
                             </h3>
                         </div>
                     </div>
                 </div>
                 {/* COPIAR LOGICA */}
                 <legend style={{ fontSize: "20px", color: " #548cb6" }} >
-                    &nbsp; &nbsp; Para modificar una música de la Escuela de Biodanza, se requiere la siguiente información:</legend>
+                    &nbsp; &nbsp; Para modificar un contacto de la Escuela de Biodanza, se requiere la siguiente información:</legend>
                 <hr className='mt-3' />
                 {
                     Object.keys(contact).length > 0 ?

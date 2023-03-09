@@ -27,7 +27,7 @@ export const ListReport = () => {
         try {
             console.warn(id);
             // eslint-disable-next-line no-restricted-globals
-            const confirmation = confirm("Are you sure?")
+            const confirmation = confirm("Esta seguro que desea eliminar este contacto permanentemente")
             if (confirmation) {
                 await axios.get(
                     `http://127.0.0.1:8000/api/v1/reporte/${id}/destroy`,

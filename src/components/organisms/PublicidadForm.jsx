@@ -14,7 +14,7 @@ export const PublicidadForm = ({ publi }) => {
     const [descripcion, setDescripcion] = useState(publi?.descripcion);
     const [evento, setEvento] = useState(publi?.evento);
     const [image, setImage] = useState(null);
- 
+
     const [isTitleValid, setIsTitleValid] = useState(true);
     const [isDescriptionValid, setIsDescriptionValid] = useState(true);
     const [showAlert, setShowAlert] = useState(false);
@@ -40,6 +40,12 @@ export const PublicidadForm = ({ publi }) => {
         }
 
 
+        const currentDate = new Date();
+        const selectedDate = new Date(evento);
+        if (selectedDate < currentDate) {
+            setIsDateValid(false);
+            return;
+        }
         setIsTitleValid(true);
         setIsDateValid(true);
         setShowAlert(true);
@@ -49,7 +55,7 @@ export const PublicidadForm = ({ publi }) => {
         data.append("evento", evento);
         data.append("descripcion", descripcion);
         data.append("imagen", image);
-       
+
         console.log(data)
 
 
@@ -60,10 +66,10 @@ export const PublicidadForm = ({ publi }) => {
                     `https://alphaofin.herokuapp.com/api/alpha/publicidad/${publi.id}/update`,
                     data,
                     { headers: { 'authorization': token } }
-                    
+
                 );
                 console.log(response.data);
-                  setMensaje(response.data.messages)
+                setMensaje(response.data.messages)
             } else {
                 const response = await axios.post(
                     `https://alphaofin.herokuapp.com/api/alpha/publicidad/create`,
@@ -71,9 +77,9 @@ export const PublicidadForm = ({ publi }) => {
                     { headers: { 'authorization': token } }
                 );
                 console.log(response.data);
-                  setMensaje(response.data.messages)
+                setMensaje(response.data.messages)
             }
-          
+
             /* navigate('/'); */
 
         } catch (error) {
@@ -89,7 +95,6 @@ export const PublicidadForm = ({ publi }) => {
                         error && <p className='text-red-700 font-semibold text-xl'>Todos los campos son obligatorios</p>
                     }
                     <fieldset>
-                        <legend><i className="zmdi zmdi-account-box"></i> &nbsp; Información para publicidad</legend>
                         <div className="container-fluid my-3">
                             <div className="row">
                                 <div className="col-xs-12 col-sm-6">
@@ -123,12 +128,12 @@ export const PublicidadForm = ({ publi }) => {
                                             accept=".jpg, .png, .jpeg"
                                             onChange={(e) => setImage(e.target.files[0])}
                                             required
-                                             />
+                                        />
                                     </div>
                                 </div>
-                                <div className="col-xs-12 col-sm-6">
+                                <div className="col-xs-12 col-sm-6 my-3">
                                     <div className="form-group label-floating">
-                                    <label htmlFor='descripcion' className="control-label">Descripción</label>
+                                        <label htmlFor='descripcion' className="control-label">Descripción</label>
                                         <textarea
                                             id='descripcion'
                                             type="attention_schedule"
@@ -147,9 +152,9 @@ export const PublicidadForm = ({ publi }) => {
                                     </div>
                                 </div>
 
-                                <div className="col-xs-12 col-sm-6">
+                                <div className="col-xs-12 col-sm-6 my-3" >
                                     <div className="form-group label-floating">
-                                    <label htmlFor='evento' className="control-label">Fecha y Hora</label>
+                                        <label htmlFor='evento' className="control-label">Fecha y Hora</label>
                                         <input
                                             className="form-control"
                                             id='evento'
@@ -165,6 +170,7 @@ export const PublicidadForm = ({ publi }) => {
                                                 La fecha y hora no puede ser anterior a la fecha y hora actual.
                                             </div>
                                         )}
+
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +192,7 @@ export const PublicidadForm = ({ publi }) => {
                                 <div className="alert1">
                                     <h5 style={{ color: " #2D4912" }}>
                                         <i class="bi bi-check-circle-fill" style={{ color: " #2D4912", marginRight: "8px" }}></i>
-                                        El evento se guardó correctamente
+                                        La publicidad se guardó correctamente
                                     </h5>
                                     <h2 onClick={VerAlert}
                                         className="btn btn-raised btn-sm"
