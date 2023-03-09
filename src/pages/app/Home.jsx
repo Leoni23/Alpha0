@@ -46,7 +46,7 @@ export const Home = () => {
     }
     useEffect(() => { getReserva(); }, [])
 
-    /* APIS DE Publicidad*/
+    /* APIS DEl apartado Publicidad*/
 
     const getPublicidad = async () => {
         try {
@@ -63,7 +63,6 @@ export const Home = () => {
     }
     useEffect(() => { getPublicidad(); }, [])
 
-    /* APIS DE CONTACTANOS */
 
     const getContact = async () => {
         try {
